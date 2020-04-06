@@ -42,6 +42,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtVerifyPass = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,6 +175,17 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sistemaNotas.Properties.Resources.Return2;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 407);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // FrmNuevoRegistro
             // 
             this.AcceptButton = this.btnRegistrar;
@@ -180,6 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(147)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(377, 463);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtVerifyPass);
             this.Controls.Add(this.txtPassword);
@@ -194,9 +208,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(393, 502);
+            this.MinimumSize = new System.Drawing.Size(393, 502);
             this.Name = "FrmNuevoRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Registro";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,9 +230,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtVerifyPass;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txtUsuario;
     }
 }

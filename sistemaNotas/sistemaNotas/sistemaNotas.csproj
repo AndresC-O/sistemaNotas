@@ -153,6 +153,8 @@
       <DependentUpon>notasEstudiantes.edmx</DependentUpon>
       <LastGenOutput>notasEstudiantes.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Return2.png" />
+    <None Include="Resources\Return.png" />
     <None Include="Resources\3700477-certificate-certified-contract-diploma-guarantee-patent-qualification_108739.png" />
   </ItemGroup>
   <ItemGroup>
