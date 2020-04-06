@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaNotas.Model;
 
 namespace sistemaNotas
 {
@@ -29,6 +30,24 @@ namespace sistemaNotas
             else
             {
                 txtPassword.PasswordChar = '•';
+            }
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+            {
+                var lista = from estudiante in bd.estudiante
+                            where estudiante.usuario == txtUsuario.Text
+                            && estudiante.contrasenia == txtPassword.Text
+                            select estudiante;
+
+                if (lista.Count() > 0)
+                {
+                }
+                else
+                {
+                }
             }
         }
     }
