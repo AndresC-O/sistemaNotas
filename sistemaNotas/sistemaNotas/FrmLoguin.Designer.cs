@@ -34,10 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linklblNuevoRegistro = new System.Windows.Forms.LinkLabel();
             this.checkBoxPass = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.label3.Location = new System.Drawing.Point(12, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 32);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Contraseña:";
             // 
             // txtUsuario
@@ -80,7 +80,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(18, 100);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(259, 36);
-            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -90,16 +90,6 @@
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(259, 36);
             this.txtPassword.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::sistemaNotas.Properties.Resources._3700477_certificate_certified_contract_diploma_guarantee_patent_qualification_108739;
-            this.pictureBox1.Location = new System.Drawing.Point(314, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 189);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // btnEntrar
             // 
@@ -113,16 +103,17 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // linkLabel1
+            // linklblNuevoRegistro
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Bodoni MT", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(15, 298);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(267, 18);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Aún no soy un Usuario - ¡Regístrame!\r\n";
+            this.linklblNuevoRegistro.AutoSize = true;
+            this.linklblNuevoRegistro.Font = new System.Drawing.Font("Bodoni MT", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblNuevoRegistro.Location = new System.Drawing.Point(15, 298);
+            this.linklblNuevoRegistro.Name = "linklblNuevoRegistro";
+            this.linklblNuevoRegistro.Size = new System.Drawing.Size(267, 18);
+            this.linklblNuevoRegistro.TabIndex = 7;
+            this.linklblNuevoRegistro.TabStop = true;
+            this.linklblNuevoRegistro.Text = "Aún no soy un Usuario - ¡Regístrame!\r\n";
+            this.linklblNuevoRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblNuevoRegistro_LinkClicked);
             // 
             // checkBoxPass
             // 
@@ -130,19 +121,30 @@
             this.checkBoxPass.Location = new System.Drawing.Point(18, 221);
             this.checkBoxPass.Name = "checkBoxPass";
             this.checkBoxPass.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxPass.TabIndex = 8;
+            this.checkBoxPass.TabIndex = 5;
             this.checkBoxPass.Text = "Ver Contraseña";
             this.checkBoxPass.UseVisualStyleBackColor = true;
             this.checkBoxPass.CheckedChanged += new System.EventHandler(this.checkBoxPass_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sistemaNotas.Properties.Resources._3700477_certificate_certified_contract_diploma_guarantee_patent_qualification_108739;
+            this.pictureBox1.Location = new System.Drawing.Point(314, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmLoguin
             // 
+            this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(204)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(147)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(584, 335);
             this.Controls.Add(this.checkBoxPass);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linklblNuevoRegistro);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPassword);
@@ -151,6 +153,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(600, 374);
+            this.MinimumSize = new System.Drawing.Size(600, 374);
             this.Name = "FrmLoguin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
@@ -169,7 +173,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linklblNuevoRegistro;
         private System.Windows.Forms.CheckBox checkBoxPass;
     }
 }

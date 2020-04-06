@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaNotas.Model;
+using sistemaNotas.Vistas;
 
 namespace sistemaNotas
 {
@@ -44,11 +45,22 @@ namespace sistemaNotas
 
                 if (lista.Count() > 0)
                 {
+                    FrmMenuPrincipal menu = new FrmMenuPrincipal();
+                    menu.Show();
+                    this.Hide();
                 }
                 else
                 {
+                    MessageBox.Show("¡El usuario no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void linklblNuevoRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmNuevoRegistro newR = new FrmNuevoRegistro();
+            newR.Show();
+            this.Hide();
         }
     }
 }
