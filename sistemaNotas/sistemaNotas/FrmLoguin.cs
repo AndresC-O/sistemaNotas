@@ -36,22 +36,29 @@ namespace sistemaNotas
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+            if (txtUsuario.Text == "" || txtPassword.Text == "")
             {
-                var lista = from estudiante in bd.estudiante
-                            where estudiante.usuario == txtUsuario.Text
-                            && estudiante.contrasenia == txtPassword.Text
-                            select estudiante;
+                MessageBox.Show("Todos los campos son requeridos.", "Completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                {
+                    var lista = from estudiante in bd.estudiante
+                                where estudiante.usuario == txtUsuario.Text
+                                && estudiante.contrasenia == txtPassword.Text
+                                select estudiante;
 
-                if (lista.Count() > 0)
-                {
-                    FrmMenuPrincipal menu = new FrmMenuPrincipal();
-                    menu.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("¡El usuario no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (lista.Count() > 0)
+                    {
+                        FrmMenuPrincipal menu = new FrmMenuPrincipal();
+                        menu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡El usuario no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

@@ -40,6 +40,7 @@
             this.datosEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoDeMateriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.másToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(583, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(705, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,6 +105,7 @@
             this.datosEstudiantesToolStripMenuItem.Name = "datosEstudiantesToolStripMenuItem";
             this.datosEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datosEstudiantesToolStripMenuItem.Text = "Datos Estudiantes";
+            this.datosEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.datosEstudiantesToolStripMenuItem_Click);
             // 
             // mantenimientoDeMateriasToolStripMenuItem
             // 
@@ -117,12 +119,21 @@
             this.ingresarNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresarNotasToolStripMenuItem.Text = "Ingresar Notas";
             // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(0, 24);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(705, 434);
+            this.panelContenedor.TabIndex = 2;
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(147)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(583, 425);
+            this.ClientSize = new System.Drawing.Size(705, 458);
+            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -147,5 +158,6 @@
         private System.Windows.Forms.ToolStripMenuItem másToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }

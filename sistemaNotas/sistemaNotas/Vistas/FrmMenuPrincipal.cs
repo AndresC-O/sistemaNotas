@@ -16,5 +16,25 @@ namespace sistemaNotas.Vistas
         {
             InitializeComponent();
         }
+
+        private void AbrirFormulario(object formHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+
+            Form fh = formHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+        }
+
+        private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmEstudiantes());
+        }
     }
 }
