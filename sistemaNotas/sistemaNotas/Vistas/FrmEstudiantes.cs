@@ -42,43 +42,58 @@ namespace sistemaNotas.Vistas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+            if (txtNombres.Text == "" || txtApellidos.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
             {
-                student.nombresEstudiante = txtNombres.Text;
-                student.apellidos = txtApellidos.Text;
-                student.usuario = txtUsuario.Text;
-                student.contrasenia = txtPassword.Text;
+                MessageBox.Show("No se permiten incersiones en blanco, \ncomplete todos los campos.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                {
+                    student.nombresEstudiante = txtNombres.Text;
+                    student.apellidos = txtApellidos.Text;
+                    student.usuario = txtUsuario.Text;
+                    student.contrasenia = txtPassword.Text;
 
-                bd.estudiante.Add(student);
-                bd.SaveChanges();
+                    bd.estudiante.Add(student);
+                    bd.SaveChanges();
+                }
+
+                dtvEstudiantes.Rows.Clear();
+                CargarDatos();
+                LimpiarDatos();
             }
 
-            dtvEstudiantes.Rows.Clear();
-            CargarDatos();
-            LimpiarDatos();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+            if (txtNombres.Text == "" || txtApellidos.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
             {
-                String id = dtvEstudiantes.CurrentRow.Cells[0].Value.ToString();
-
-                int idC = int.Parse(id);
-
-                student = bd.estudiante.Where(VerificarId => VerificarId.idEstudiante == idC).First();
-                student.nombresEstudiante = txtNombres.Text;
-                student.apellidos = txtApellidos.Text;
-                student.usuario = txtUsuario.Text;
-                student.contrasenia = txtPassword.Text;
-
-                bd.Entry(student).State = System.Data.Entity.EntityState.Modified;
-                bd.SaveChanges();
+                MessageBox.Show("Para actualizar, primero seleccione \nun estudiante en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                {
+                    String id = dtvEstudiantes.CurrentRow.Cells[0].Value.ToString();
 
-            dtvEstudiantes.Rows.Clear();
-            CargarDatos();
-            LimpiarDatos();
+                    int idC = int.Parse(id);
+
+                    student = bd.estudiante.Where(VerificarId => VerificarId.idEstudiante == idC).First();
+                    student.nombresEstudiante = txtNombres.Text;
+                    student.apellidos = txtApellidos.Text;
+                    student.usuario = txtUsuario.Text;
+                    student.contrasenia = txtPassword.Text;
+
+                    bd.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
+                }
+
+                dtvEstudiantes.Rows.Clear();
+                CargarDatos();
+                LimpiarDatos();
+            }
         }
 
         private void FrmEstudiantes_Load(object sender, EventArgs e)

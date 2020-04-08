@@ -19,6 +19,7 @@ namespace sistemaNotas.Vistas
 
         private void AbrirFormulario(object formHijo)
         {
+            
             if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -29,12 +30,21 @@ namespace sistemaNotas.Vistas
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
             this.panelContenedor.Tag = fh;
+            
             fh.Show();
+            
         }
 
         private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.label1.Visible = false;
             AbrirFormulario(new FrmEstudiantes());
+        }
+
+        private void mantenimientoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.label1.Visible = false;
+            AbrirFormulario(new FrmMaterias());
         }
     }
 }

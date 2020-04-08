@@ -38,7 +38,7 @@ namespace sistemaNotas
         {
             if (txtUsuario.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Todos los campos son requeridos.", "Completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Todos los campos son requeridos.", "Completar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

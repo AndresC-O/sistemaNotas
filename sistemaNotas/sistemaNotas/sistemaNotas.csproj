@@ -96,6 +96,12 @@
     <Compile Include="Vistas\FrmEstudiantes.Designer.cs">
       <DependentUpon>FrmEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\FrmMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmMaterias.Designer.cs">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\FrmEstudiantes.resx">
       <DependentUpon>FrmEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmMaterias.resx">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
@@ -162,6 +171,7 @@
       <DependentUpon>notasEstudiantes.edmx</DependentUpon>
       <LastGenOutput>notasEstudiantes.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Up.png" />
     <None Include="Resources\Return2.png" />
     <None Include="Resources\Return.png" />
     <None Include="Resources\3700477-certificate-certified-contract-diploma-guarantee-patent-qualification_108739.png" />
