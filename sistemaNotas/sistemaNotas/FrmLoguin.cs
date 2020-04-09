@@ -69,5 +69,10 @@ namespace sistemaNotas
             newR.Show();
             this.Hide();
         }
+
+        private void FrmLoguin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

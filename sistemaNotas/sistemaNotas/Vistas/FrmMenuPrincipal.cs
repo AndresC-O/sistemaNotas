@@ -46,5 +46,16 @@ namespace sistemaNotas.Vistas
             this.label1.Visible = false;
             AbrirFormulario(new FrmMaterias());
         }
+
+        private void ingresarNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.label1.Visible = false;
+            AbrirFormulario(new FrmNotas());
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

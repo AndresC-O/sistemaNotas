@@ -41,8 +41,8 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,8 +102,9 @@
             // ingresarNotasToolStripMenuItem
             // 
             this.ingresarNotasToolStripMenuItem.Name = "ingresarNotasToolStripMenuItem";
-            this.ingresarNotasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.ingresarNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresarNotasToolStripMenuItem.Text = "Ingresar Notas";
+            this.ingresarNotasToolStripMenuItem.Click += new System.EventHandler(this.ingresarNotasToolStripMenuItem_Click);
             // 
             // másToolStripMenuItem
             // 
@@ -116,8 +117,9 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir.";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -136,16 +138,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(705, 434);
             this.panelContenedor.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::sistemaNotas.Properties.Resources.Up;
-            this.pictureBox1.Location = new System.Drawing.Point(290, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -157,6 +149,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Para comenzar, acceda al menú principal \r\nen la barra superior.\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sistemaNotas.Properties.Resources.Up;
+            this.pictureBox1.Location = new System.Drawing.Point(290, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenuPrincipal
             // 

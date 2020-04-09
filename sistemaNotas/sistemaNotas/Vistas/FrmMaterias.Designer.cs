@@ -32,10 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.dtvMateria = new System.Windows.Forms.DataGridView();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMateria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +76,22 @@
             this.dtvMateria.TabIndex = 2;
             this.dtvMateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvMateria_CellClick);
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.FillWeight = 194.9239F;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 200;
+            // 
+            // materia
+            // 
+            this.materia.FillWeight = 5.076141F;
+            this.materia.HeaderText = "MATERIA";
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            // 
             // btnRegistrar
             // 
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -98,21 +116,26 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // id
+            // label2
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.FillWeight = 194.9239F;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 200;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bodoni MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(121, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 24);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Id:";
             // 
-            // materia
+            // txtId
             // 
-            this.materia.FillWeight = 5.076141F;
-            this.materia.HeaderText = "MATERIA";
-            this.materia.Name = "materia";
-            this.materia.ReadOnly = true;
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Bodoni MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(212, 9);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(97, 33);
+            this.txtId.TabIndex = 17;
             // 
             // FrmMaterias
             // 
@@ -120,6 +143,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(147)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(689, 395);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.dtvMateria);
@@ -147,5 +172,7 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

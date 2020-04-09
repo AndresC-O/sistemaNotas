@@ -35,6 +35,7 @@ namespace sistemaNotas.Vistas
 
         void LimpiarDatos()
         {
+            txtId.Text = "";
             txtMateria.Text = "";
         }
 
@@ -68,8 +69,10 @@ namespace sistemaNotas.Vistas
         private void dtvMateria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             String materia = dtvMateria.CurrentRow.Cells[1].Value.ToString();
+            String id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
 
             txtMateria.Text = materia;
+            txtId.Text = id;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
