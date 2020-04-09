@@ -58,6 +58,8 @@ namespace sistemaNotas.Vistas
             this.txtIdMateria.Enabled = false;
             this.txtNota.Enabled = false;
 
+            this.dtvNotas.Enabled = false;
+
             CargarDatos();
         }
 
@@ -118,13 +120,17 @@ namespace sistemaNotas.Vistas
                     int idC = int.Parse(id);
 
                     grade = bd.notas.Where(VerificarId => VerificarId.idNotas == idC).First();
-                    grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
-                    grade.idMateria = int.Parse(txtIdMateria.Text);
-                    grade.nota = int.Parse(txtNota.Text);
+                    //grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
+                    //grade.idMateria = int.Parse(txtIdMateria.Text);
+                    grade.nota = double.Parse(txtNota.Text);
 
                     bd.Entry(grade).State = System.Data.Entity.EntityState.Modified;
                     bd.SaveChanges();
                 }
+
+                dtvNotas.Rows.Clear();
+                CargarDatos();
+                LimpiarDatos();
             }
         }
 
@@ -138,6 +144,31 @@ namespace sistemaNotas.Vistas
 
             this.btnNuevo.Enabled = false;
             this.btnRegistrar.Enabled = true;
+
+            this.dtvNotas.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
+            {
+                MessageBox.Show("Para eliminar, primero seleccione \nun id en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                using(notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                {
+                    String id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
+
+                    grade = bd.notas.Find(int.Parse(id));
+                    bd.notas.Remove(grade);
+                    bd.SaveChanges();
+                }
+
+                dtvNotas.Rows.Clear();
+                CargarDatos();
+                LimpiarDatos();
+            }
         }
     }
 }
