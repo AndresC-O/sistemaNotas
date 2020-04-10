@@ -55,7 +55,13 @@ namespace sistemaNotas.Vistas
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult entrada = MessageBox.Show("¿Estás seguro de salir del programa?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if(entrada == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            
         }
     }
 }

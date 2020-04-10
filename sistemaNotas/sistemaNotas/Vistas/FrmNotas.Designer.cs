@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotas));
             this.txtIdEstudiante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdMateria = new System.Windows.Forms.TextBox();
@@ -195,6 +196,7 @@
             // 
             // FrmNotas
             // 
+            this.AcceptButton = this.btnNuevo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(147)))), ((int)(((byte)(204)))));
@@ -211,6 +213,9 @@
             this.Controls.Add(this.txtIdEstudiante);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(689, 395);
+            this.MinimumSize = new System.Drawing.Size(689, 395);
             this.Name = "FrmNotas";
             this.Text = "FrmNotas";
             this.Load += new System.EventHandler(this.FrmNotas_Load);
