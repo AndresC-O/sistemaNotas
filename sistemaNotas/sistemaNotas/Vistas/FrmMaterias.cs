@@ -68,6 +68,8 @@ namespace sistemaNotas.Vistas
 
         private void dtvMateria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.btnRegistrar.Enabled = false;
+
             String materia = dtvMateria.CurrentRow.Cells[1].Value.ToString();
             String id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
 
@@ -99,6 +101,8 @@ namespace sistemaNotas.Vistas
                 dtvMateria.Rows.Clear();
                 CargarDatos();
                 LimpiarDatos();
+                this.btnRegistrar.Enabled = true;
+                //this.btnActualizar.Enabled = false;
             }
         }
     }

@@ -86,6 +86,11 @@ namespace sistemaNotas.Vistas
                 dtvNotas.Rows.Clear();
                 CargarDatos();
                 LimpiarDatos();
+
+                this.btnNuevo.Enabled = true;
+                this.btnRegistrar.Enabled = false;
+                this.btnActualizar.Enabled = false;
+                this.btnEliminar.Enabled = false;
             }
         }
 
@@ -95,6 +100,8 @@ namespace sistemaNotas.Vistas
             this.txtIdMateria.Enabled = false;
             this.btnRegistrar.Enabled = false;
             this.btnNuevo.Enabled = true;
+            this.btnEliminar.Enabled = true;
+            this.btnActualizar.Enabled = true;
 
             String idEstudiante = dtvNotas.CurrentRow.Cells[1].Value.ToString();
             String idMateria = dtvNotas.CurrentRow.Cells[2].Value.ToString();
@@ -144,6 +151,8 @@ namespace sistemaNotas.Vistas
 
             this.btnNuevo.Enabled = false;
             this.btnRegistrar.Enabled = true;
+            this.btnActualizar.Enabled = false;
+            this.btnEliminar.Enabled = false;
 
             this.dtvNotas.Enabled = true;
         }

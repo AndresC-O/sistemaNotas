@@ -93,6 +93,8 @@ namespace sistemaNotas.Vistas
                 dtvEstudiantes.Rows.Clear();
                 CargarDatos();
                 LimpiarDatos();
+                //this.btnActualizar.Enabled = false;
+                this.btnRegistrar.Enabled = true;
             }
         }
 
@@ -112,6 +114,8 @@ namespace sistemaNotas.Vistas
             txtApellidos.Text = apellidos;
             txtUsuario.Text = usuario;
             txtPassword.Text = password;
+
+            this.btnRegistrar.Enabled = false;
         }
     }
 }

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotas));
             this.txtIdEstudiante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -109,24 +112,52 @@
             this.dtvNotas.AllowUserToAddRows = false;
             this.dtvNotas.AllowUserToDeleteRows = false;
             this.dtvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvNotas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
+            this.dtvNotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(80)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bodoni MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtvNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idNota,
             this.idNombreEst,
             this.idMateria,
             this.nota});
+            this.dtvNotas.EnableHeadersVisualStyles = false;
+            this.dtvNotas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
             this.dtvNotas.Location = new System.Drawing.Point(12, 172);
             this.dtvNotas.Name = "dtvNotas";
             this.dtvNotas.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(80)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bodoni MT Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvNotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtvNotas.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bodoni MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.dtvNotas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvNotas.Size = new System.Drawing.Size(665, 211);
             this.dtvNotas.TabIndex = 13;
             this.dtvNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellClick);
             // 
             // idNota
             // 
+            this.idNota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idNota.HeaderText = "ID";
             this.idNota.Name = "idNota";
             this.idNota.ReadOnly = true;
+            this.idNota.Width = 49;
             // 
             // idNombreEst
             // 
@@ -231,15 +262,15 @@
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtvNotas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNombreEst;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.TextBox txtIdEstudiante;
         public System.Windows.Forms.TextBox txtIdMateria;
         public System.Windows.Forms.Button btnRegistrar;
         public System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNombreEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }

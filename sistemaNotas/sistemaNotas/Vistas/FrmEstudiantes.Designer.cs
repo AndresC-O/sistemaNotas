@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstudiantes));
             this.dtvEstudiantes = new System.Windows.Forms.DataGridView();
             this.txtNombres = new System.Windows.Forms.TextBox();
@@ -53,6 +55,17 @@
             this.dtvEstudiantes.AllowUserToAddRows = false;
             this.dtvEstudiantes.AllowUserToDeleteRows = false;
             this.dtvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
+            this.dtvEstudiantes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtvEstudiantes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(80)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bodoni MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -60,9 +73,18 @@
             this.Apellidos,
             this.Usuario,
             this.Password});
+            this.dtvEstudiantes.EnableHeadersVisualStyles = false;
+            this.dtvEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
             this.dtvEstudiantes.Location = new System.Drawing.Point(14, 186);
             this.dtvEstudiantes.Name = "dtvEstudiantes";
             this.dtvEstudiantes.ReadOnly = true;
+            this.dtvEstudiantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtvEstudiantes.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bodoni MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.dtvEstudiantes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtvEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvEstudiantes.Size = new System.Drawing.Size(675, 220);
             this.dtvEstudiantes.TabIndex = 0;
             this.dtvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEstudiantes_CellClick);
@@ -169,9 +191,11 @@
             // 
             // Id
             // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 48;
             // 
             // Nombres
             // 
@@ -187,9 +211,11 @@
             // 
             // Usuario
             // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Usuario.HeaderText = "USUARIO";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 93;
             // 
             // Password
             // 
