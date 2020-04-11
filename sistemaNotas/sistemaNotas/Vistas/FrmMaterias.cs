@@ -46,24 +46,33 @@ namespace sistemaNotas.Vistas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (txtMateria.Text == "")
+            try
             {
-                MessageBox.Show("No se permiten incersiones en blanco, \ncomplete todos los campos.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                if (txtMateria.Text == "")
                 {
-                    subject.nombreMateria = txtMateria.Text;
-
-                    bd.materia.Add(subject);
-                    bd.SaveChanges();
+                    MessageBox.Show("No se permiten incersiones en blanco, \ncomplete todos los campos.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                    {
+                        subject.nombreMateria = txtMateria.Text;
 
-                dtvMateria.Rows.Clear();
-                CargarDatos();
-                LimpiarDatos();
+                        bd.materia.Add(subject);
+                        bd.SaveChanges();
+                    }
+
+                    dtvMateria.Rows.Clear();
+                    CargarDatos();
+                    LimpiarDatos();
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al Insertar: \n\n" + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void dtvMateria_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -75,35 +84,51 @@ namespace sistemaNotas.Vistas
 
             txtMateria.Text = materia;
             txtId.Text = id;
+
+            this.btnActualizar.Enabled = true;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtMateria.Text == "")
+            try
             {
-                MessageBox.Show("Para actualizar, primero seleccione \nuna materia en específica.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                if (txtMateria.Text == "")
                 {
-                    String id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
-
-                    int idC = int.Parse(id);
-
-                    subject = bd.materia.Where(VerificarId => VerificarId.idMateria == idC).First();
-                    subject.nombreMateria = txtMateria.Text;
-
-                    bd.Entry(subject).State = System.Data.Entity.EntityState.Modified;
-                    bd.SaveChanges();
+                    MessageBox.Show("Para actualizar, primero seleccione \nuna materia en específica.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                    {
+                        String id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
 
-                dtvMateria.Rows.Clear();
-                CargarDatos();
-                LimpiarDatos();
-                this.btnRegistrar.Enabled = true;
-                //this.btnActualizar.Enabled = false;
+                        int idC = int.Parse(id);
+
+                        subject = bd.materia.Where(VerificarId => VerificarId.idMateria == idC).First();
+                        subject.nombreMateria = txtMateria.Text;
+
+                        bd.Entry(subject).State = System.Data.Entity.EntityState.Modified;
+                        bd.SaveChanges();
+                    }
+
+                    dtvMateria.Rows.Clear();
+                    CargarDatos();
+                    LimpiarDatos();
+                    this.btnRegistrar.Enabled = true;
+                    //this.btnActualizar.Enabled = false;
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al Actualizar: \n\n" + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+            this.btnActualizar.Enabled = false;
+            this.btnRegistrar.Enabled = true;
         }
     }
 }

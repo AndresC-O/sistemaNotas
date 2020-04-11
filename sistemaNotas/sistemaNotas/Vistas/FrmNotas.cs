@@ -59,39 +59,43 @@ namespace sistemaNotas.Vistas
             this.txtNota.Enabled = false;
 
             this.dtvNotas.Enabled = false;
-
             CargarDatos();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
-
-            if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
+            try
             {
-                MessageBox.Show("No se permiten incersiones en blanco, \ncomplete todos los campos.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                using(notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
                 {
-                    grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
-                    grade.idMateria = int.Parse(txtIdMateria.Text);
-                    grade.nota = double.Parse(txtNota.Text);
-
-                    bd.notas.Add(grade);
-                    bd.SaveChanges();
+                    MessageBox.Show("No se permiten incersiones en blanco, \ncomplete todos los campos.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                    {
+                        grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
+                        grade.idMateria = int.Parse(txtIdMateria.Text);
+                        grade.nota = double.Parse(txtNota.Text);
 
-                dtvNotas.Rows.Clear();
-                CargarDatos();
-                LimpiarDatos();
+                        bd.notas.Add(grade);
+                        bd.SaveChanges();
+                    }
 
-                this.btnNuevo.Enabled = true;
-                this.btnRegistrar.Enabled = false;
-                this.btnActualizar.Enabled = false;
-                this.btnEliminar.Enabled = false;
+                    dtvNotas.Rows.Clear();
+                    CargarDatos();
+                    LimpiarDatos();
+
+                    this.btnNuevo.Enabled = true;
+                    this.btnRegistrar.Enabled = false;
+                    this.btnActualizar.Enabled = false;
+                    this.btnEliminar.Enabled = false;
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al Insertar: \n\n" + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
         }
 
         private void dtvNotas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -114,30 +118,37 @@ namespace sistemaNotas.Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
+            try
             {
-                MessageBox.Show("Para actualizar, primero seleccione \nun id en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                using(notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
                 {
-                    String id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
-
-                    int idC = int.Parse(id);
-
-                    grade = bd.notas.Where(VerificarId => VerificarId.idNotas == idC).First();
-                    //grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
-                    //grade.idMateria = int.Parse(txtIdMateria.Text);
-                    grade.nota = double.Parse(txtNota.Text);
-
-                    bd.Entry(grade).State = System.Data.Entity.EntityState.Modified;
-                    bd.SaveChanges();
+                    MessageBox.Show("Para actualizar, primero seleccione \nun id en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                    {
+                        String id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
 
-                dtvNotas.Rows.Clear();
-                CargarDatos();
-                LimpiarDatos();
+                        int idC = int.Parse(id);
+
+                        grade = bd.notas.Where(VerificarId => VerificarId.idNotas == idC).First();
+                        //grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
+                        //grade.idMateria = int.Parse(txtIdMateria.Text);
+                        grade.nota = double.Parse(txtNota.Text);
+
+                        bd.Entry(grade).State = System.Data.Entity.EntityState.Modified;
+                        bd.SaveChanges();
+                    }
+
+                    dtvNotas.Rows.Clear();
+                    CargarDatos();
+                    LimpiarDatos();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al Actualizar: \n\n" + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -159,24 +170,31 @@ namespace sistemaNotas.Vistas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
+            try
             {
-                MessageBox.Show("Para eliminar, primero seleccione \nun id en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                using(notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                if (txtIdEstudiante.Text == "" || txtIdMateria.Text == "" || txtNota.Text == "")
                 {
-                    String id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
-
-                    grade = bd.notas.Find(int.Parse(id));
-                    bd.notas.Remove(grade);
-                    bd.SaveChanges();
+                    MessageBox.Show("Para eliminar, primero seleccione \nun id en específico.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else
+                {
+                    using (notasEstudiantesEntities bd = new notasEstudiantesEntities())
+                    {
+                        String id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
 
-                dtvNotas.Rows.Clear();
-                CargarDatos();
-                LimpiarDatos();
+                        grade = bd.notas.Find(int.Parse(id));
+                        bd.notas.Remove(grade);
+                        bd.SaveChanges();
+                    }
+
+                    dtvNotas.Rows.Clear();
+                    CargarDatos();
+                    LimpiarDatos();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar: \n\n" + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
