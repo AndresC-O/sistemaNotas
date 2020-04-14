@@ -39,14 +39,16 @@
             this.txtNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtvNotas = new System.Windows.Forms.DataGridView();
-            this.idNota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNombreEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.idNota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNombreEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,9 @@
             this.idNota,
             this.idNombreEst,
             this.idMateria,
-            this.nota});
+            this.nota,
+            this.IDM,
+            this.IdEstudiante});
             this.dtvNotas.EnableHeadersVisualStyles = false;
             this.dtvNotas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(103)))), ((int)(((byte)(128)))));
             this.dtvNotas.Location = new System.Drawing.Point(12, 172);
@@ -150,32 +154,6 @@
             this.dtvNotas.Size = new System.Drawing.Size(665, 211);
             this.dtvNotas.TabIndex = 13;
             this.dtvNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellClick);
-            // 
-            // idNota
-            // 
-            this.idNota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idNota.HeaderText = "ID";
-            this.idNota.Name = "idNota";
-            this.idNota.ReadOnly = true;
-            this.idNota.Width = 49;
-            // 
-            // idNombreEst
-            // 
-            this.idNombreEst.HeaderText = "NOMBRE ESTUDIANTE";
-            this.idNombreEst.Name = "idNombreEst";
-            this.idNombreEst.ReadOnly = true;
-            // 
-            // idMateria
-            // 
-            this.idMateria.HeaderText = "MATERIA";
-            this.idMateria.Name = "idMateria";
-            this.idMateria.ReadOnly = true;
-            // 
-            // nota
-            // 
-            this.nota.HeaderText = "NOTA";
-            this.nota.Name = "nota";
-            this.nota.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -225,6 +203,46 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // idNota
+            // 
+            this.idNota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idNota.HeaderText = "ID";
+            this.idNota.Name = "idNota";
+            this.idNota.ReadOnly = true;
+            this.idNota.Width = 49;
+            // 
+            // idNombreEst
+            // 
+            this.idNombreEst.HeaderText = "NOMBRE ESTUDIANTE";
+            this.idNombreEst.Name = "idNombreEst";
+            this.idNombreEst.ReadOnly = true;
+            // 
+            // idMateria
+            // 
+            this.idMateria.HeaderText = "MATERIA";
+            this.idMateria.Name = "idMateria";
+            this.idMateria.ReadOnly = true;
+            // 
+            // nota
+            // 
+            this.nota.HeaderText = "NOTA";
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
+            // 
+            // IDM
+            // 
+            this.IDM.HeaderText = "IDM";
+            this.IDM.Name = "IDM";
+            this.IDM.ReadOnly = true;
+            this.IDM.Visible = false;
+            // 
+            // IdEstudiante
+            // 
+            this.IdEstudiante.HeaderText = "IdEstudiante";
+            this.IdEstudiante.Name = "IdEstudiante";
+            this.IdEstudiante.ReadOnly = true;
+            this.IdEstudiante.Visible = false;
+            // 
             // FrmNotas
             // 
             this.AcceptButton = this.btnNuevo;
@@ -272,5 +290,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idNombreEst;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstudiante;
     }
 }

@@ -35,12 +35,14 @@ namespace sistemaNotas.Vistas
                                      Id = tbNotas.idNotas,
                                      Nombre = tbEstudiante.nombresEstudiante,
                                      Materia = tbMateria.nombreMateria,
-                                     Nota = tbNotas.nota
+                                     Nota = tbNotas.nota,
+                                     IdMateria = tbMateria.idMateria,
+                                     IdEstudiante = tbEstudiante.idEstudiante
                                  };
 
                 foreach(var iterarDatos in joinTablas)
                 {
-                    dtvNotas.Rows.Add(iterarDatos.Id, iterarDatos.Nombre, iterarDatos.Materia, iterarDatos.Nota);
+                    dtvNotas.Rows.Add(iterarDatos.Id, iterarDatos.Nombre, iterarDatos.Materia, iterarDatos.Nota, iterarDatos.IdMateria, iterarDatos.IdEstudiante);
                 }
             }
         }
@@ -100,15 +102,15 @@ namespace sistemaNotas.Vistas
 
         private void dtvNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtIdEstudiante.Enabled = false;
-            this.txtIdMateria.Enabled = false;
+            //this.txtIdEstudiante.Enabled = false;
+            //this.txtIdMateria.Enabled = false;
             this.btnRegistrar.Enabled = false;
             this.btnNuevo.Enabled = true;
             this.btnEliminar.Enabled = true;
             this.btnActualizar.Enabled = true;
 
-            String idEstudiante = dtvNotas.CurrentRow.Cells[1].Value.ToString();
-            String idMateria = dtvNotas.CurrentRow.Cells[2].Value.ToString();
+            String idEstudiante = dtvNotas.CurrentRow.Cells[5].Value.ToString();
+            String idMateria = dtvNotas.CurrentRow.Cells[4].Value.ToString();
             String nota = dtvNotas.CurrentRow.Cells[3].Value.ToString();
 
             txtIdEstudiante.Text = idEstudiante;
@@ -133,8 +135,8 @@ namespace sistemaNotas.Vistas
                         int idC = int.Parse(id);
 
                         grade = bd.notas.Where(VerificarId => VerificarId.idNotas == idC).First();
-                        //grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
-                        //grade.idMateria = int.Parse(txtIdMateria.Text);
+                        grade.idEstudiante = int.Parse(txtIdEstudiante.Text);
+                        grade.idMateria = int.Parse(txtIdMateria.Text);
                         grade.nota = double.Parse(txtNota.Text);
 
                         bd.Entry(grade).State = System.Data.Entity.EntityState.Modified;
