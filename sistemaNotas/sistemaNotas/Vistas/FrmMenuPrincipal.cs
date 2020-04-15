@@ -32,7 +32,6 @@ namespace sistemaNotas.Vistas
             this.panelContenedor.Tag = fh;
             
             fh.Show();
-            
         }
 
         private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
